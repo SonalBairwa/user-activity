@@ -132,10 +132,10 @@ STATICFILES_DIRS = (
 )
 
 
-DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
+
 
 REST_FRAMEWORK = {
-    'DATETIME_FORMAT': DATE_FORMAT,
+    
     'DEFAULT_THROTTLE_CLASSES': (
         'rest_framework.throttling.AnonRateThrottle',
         'rest_framework.throttling.UserRateThrottle'
