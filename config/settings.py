@@ -132,9 +132,20 @@ STATICFILES_DIRS = (
 )
 
 
-# REST_FRAMEWORK = {
-#     'DEFAULT_PAGINATION_CLASS': 'utils.paginations.PagePagination',
-#     'PAGE_SIZE': 100,
-#     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
-# }
-REST_FRAMEWORK = {'DEFAULT_SCHEMA_CLASS':'rest_framework.schemas.coreapi.AutoSchema' }
+DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
+
+REST_FRAMEWORK = {
+    'DATETIME_FORMAT': DATE_FORMAT,
+    'DEFAULT_THROTTLE_CLASSES': (
+        'rest_framework.throttling.AnonRateThrottle',
+        'rest_framework.throttling.UserRateThrottle'
+    ),
+    'DEFAULT_THROTTLE_RATES': {
+        'anon': '50/day',
+        'user': '100/day'
+    },
+    # 'DEFAULT_PAGINATION_CLASS': 'utils.paginations.PagesPagination',
+    'PAGE_SIZE': 50,
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
+}
+# REST_FRAMEWORK = {'DEFAULT_SCHEMA_CLASS':'rest_framework.schemas.coreapi.AutoSchema' }

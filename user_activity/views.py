@@ -9,7 +9,7 @@ import datetime
 
 class UserActivityView(ListAPIView):
 
-	""" Description : to see list of usersand their activity """
+	""" Description : To see list of users and their activity period """
 	
 	gm = GeneralMethods()
 	serializer_class = UserActivitySerializer

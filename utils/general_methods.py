@@ -15,7 +15,9 @@ ERROR_MESSAGE_KEY_NAME = 'message'
 INTERNAL_SERVER_ERROR_CLIENT_MESSAGE = 'Internal Server Error'
 SUCCESS_MESSAGE = 'success'
 
-
+""" 
+    Description : This General method class is to describe the basic work procedures.
+"""
 
 class GeneralMethods:
     request = None
